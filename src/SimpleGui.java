@@ -1,7 +1,7 @@
-import javax.swing.*; // Importe les classes Swing pour l'interface graphique
+import javax.swing.*; 
 import javax.swing.border.*;
-import java.awt.*; // Importe des classes AWT (utilisées par Swing)
-import java.awt.event.*; // Importe les classes pour gérer les événements
+import java.awt.*; 
+import java.awt.event.*; 
 import java.io.File;
 
 public class SimpleGui {
