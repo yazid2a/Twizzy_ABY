@@ -68,18 +68,11 @@ Remplacez `[CHEMIN_VERS_DLL_OPENCV]` par le chemin vers vos DLL OpenCV (exemple 
 - **Activite3** : Conversion et affichage d'images dans l'espace colorimétrique HSV
 - **SimpleGui** : Interface graphique pour la visualisation et le traitement des images
 
-## Contribution
-
-1. Fork le projet
-2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
 
 ## Auteurs
 
-- Votre Nom - *Travail initial*
+- KERRAZI EL YAZID
 
 ## Licence
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE.md](LICENSE.md) pour plus de détails
+
