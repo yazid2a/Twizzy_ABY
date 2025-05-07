@@ -1,0 +1,30 @@
+# Fichiers compilés
+*.class
+bin/
+out/
+
+# Fichiers IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de build
+target/
+build/
+dist/
+
+# Fichiers de logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
