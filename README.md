@@ -13,12 +13,14 @@ Ce projet est une application Java qui utilise OpenCV pour la détection et la r
 ```
 Projet/
 ├── src/
-│   ├── Activite1.java    # Détection des pixels rouges
-│   ├── Activite3.java    # Conversion et affichage HSV
-│   └── SimpleGui.java    # Interface graphique principale
+│   ├── AnalyseVideo.java         # Détection en temps réel
+│   ├── ProjetPanneauxEtapeChoix.java    # Interface avec étapes
+│   └── maBibliothequeTraitementImageEtendue.java    # Bibliothèque de traitement
 ├── lib/
 │   └── opencv-2413.jar   # Bibliothèque OpenCV
-├── Images_panneaux/      # Dossier contenant les images de test
+├── dll/
+│   └── opencv_java2413.dll   # DLL OpenCV
+├── Images_panneaux/      # Dossier contenant les images de référence
 └── README.md
 ```
 
@@ -29,45 +31,50 @@ Projet/
 git clone [URL_DU_REPO]
 ```
 
-2. Téléchargez OpenCV 2.4.13 depuis le site officiel d'OpenCV
-
-3. Extrayez les fichiers OpenCV et copiez :
-   - `opencv-2413.jar` dans le dossier `lib/`
-   - Les DLL natives dans un dossier accessible (par exemple : `C:\opencv\build\java\x64\`)
+2. Assurez-vous que les DLL d'OpenCV sont présentes dans le dossier `dll/`
 
 ## Compilation et Exécution
 
-### Compilation
+### Méthode Simple (Recommandée)
 
+Exécutez simplement le fichier `run.bat` qui se trouve à la racine du projet. Ce fichier configure automatiquement les chemins nécessaires et lance l'application.
+
+```bash
+.\run.bat
+```
+
+### Méthode Manuelle
+
+Si vous souhaitez compiler et exécuter manuellement :
+
+1. Compilation :
 ```bash
 javac -cp "lib/opencv-2413.jar" src/*.java
 ```
 
-### Exécution
-
-Pour exécuter l'interface graphique principale :
+2. Exécution :
+   
+Pour lancer la détection en temps réel :
 ```bash
-java -Djava.library.path="[CHEMIN_VERS_DLL_OPENCV]" -cp "src;lib/opencv-2413.jar" SimpleGui
+java -Djava.library.path="dll" -cp "src;lib/opencv-2413.jar" AnalyseVideo
 ```
 
-Pour exécuter l'activité 1 (détection des pixels rouges) :
+Pour lancer l'interface avec les étapes de traitement :
 ```bash
-java -Djava.library.path="[CHEMIN_VERS_DLL_OPENCV]" -cp "src;lib/opencv-2413.jar" Activite1
+java -Djava.library.path="dll" -cp "src;lib/opencv-2413.jar" ProjetPanneauxEtapeChoix
 ```
-
-Pour exécuter l'activité 3 (conversion HSV) :
-```bash
-java -Djava.library.path="[CHEMIN_VERS_DLL_OPENCV]" -cp "src;lib/opencv-2413.jar" Activite3
-```
-
-Remplacez `[CHEMIN_VERS_DLL_OPENCV]` par le chemin vers vos DLL OpenCV (exemple : `C:\opencv\build\java\x64`)
 
 ## Fonctionnalités
 
-- **Activite1** : Détection des pixels rouges dans une image
-- **Activite3** : Conversion et affichage d'images dans l'espace colorimétrique HSV
-- **SimpleGui** : Interface graphique pour la visualisation et le traitement des images
-
+- **AnalyseVideo** : Détection et reconnaissance en temps réel des panneaux
+- **ProjetPanneauxEtapeChoix** : Interface permettant de visualiser les différentes étapes du traitement :
+  - Image originale
+  - Niveaux de gris
+  - Image binaire
+  - Espace HSV
+  - Masque de détection
+  - Contours
+  - Détection finale
 
 ## Auteurs
 
